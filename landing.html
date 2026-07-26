@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Dra. Larissa Lodêtti | Aula ao Vivo — Método START 3R</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '{{SEU_PIXEL_ID}}');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --navy:#0e1c26;
+    --navy2:#152b38;
+    --orange:#ee7b39;
+    --orange2:#d9631f;
+    --purple:#b98eff;
+    --cream:#f6f2ea;
+    --white:#ffffff;
+    --ink:#1c1c1c;
+    --muted:rgba(255,255,255,.9);
+    --muted-ink:#5a5a52;
+  }
+
+  /* ══════ TRAVA DE ROLAGEM — só a primeira dobra existe ══════ */
+  html,body{
+    height:100%;
+    overflow:hidden;
+    overscroll-behavior:none;
+    position:fixed;
+    inset:0;
+    width:100%;
+  }
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--navy);touch-action:pan-y;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;height:100%;display:flex;flex-direction:column;}
+  img{max-width:100%;display:block;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--orange);color:#fff;font-weight:900;font-size:14px;
+    text-decoration:none;border-radius:40px;padding:17px 30px;
+    transition:transform .15s,background .15s;border:none;cursor:pointer;
+    box-shadow:0 8px 24px rgba(238,123,57,.35);
+  }
+  .btn:hover{background:var(--orange2);transform:translateY(-2px);}
+  .btn-full{width:100%;}
+  .btn-sub{display:block;text-align:center;font-size:12.5px;color:var(--muted);margin-top:10px;}
+
+  /* ══════ HERO (única dobra da página) ══════ */
+  .hero{
+    position:relative;
+    height:100vh;
+    height:100svh;
+    height:100dvh;
+    background:radial-gradient(circle at 78% 24%, #1c3644 0%, var(--navy) 60%);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    padding-top:max(16px, env(safe-area-inset-top));
+    padding-bottom:max(14px, env(safe-area-inset-bottom));
+  }
+  .hero-inner{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:18px;
+  }
+  .hero-top{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    border-radius:40px;padding:8px 16px 8px 8px;margin-bottom:16px;
+  }
+  .hero-badge img{width:34px;height:34px;border-radius:50%;object-fit:cover;background:#2b4452;}
+  .hero-badge span{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:.02em;}
+  .hero-badge span em{display:block;font-style:normal;font-weight:400;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-top:1px;}
+
+  .hero h1{
+    font-family:'Inter',sans-serif;
+    font-size:clamp(15px,2.5vw,16px);
+    line-height:1.5;
+    color:#fff;
+    font-weight:600;
+    letter-spacing:-.005em;
+    margin-bottom:10px;
+    max-width:520px;
+    text-wrap:balance;
+    background:rgba(185,142,255,.12);
+    border:1px solid rgba(185,142,255,.4);
+    border-radius:14px;
+    padding:12px 14px;
+  }
+  .hero-lead{font-size:13.5px;font-weight:900;color:var(--orange);max-width:560px;margin-bottom:12px;line-height:1.5;}
+  .hero-sub{font-size:14.5px;line-height:1.6;color:#fff;max-width:560px;margin-bottom:10px;}
+  .hero-proof{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;font-size:12.5px;color:#fff;text-align:center;margin:0;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.18);}
+  .hero-proof .stars{color:var(--orange);letter-spacing:2px;font-size:13px;}
+  .hero-proof strong{color:#fff;}
+  .hero-cta-box{
+    background:rgba(185,142,255,.12);
+    border:1px solid rgba(185,142,255,.4);
+    border-radius:16px;
+    padding:16px 18px 20px;
+    width:100%;
+    max-width:420px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .hero-cta-wrap{width:100%;display:flex;flex-direction:column;align-items:center;}
+  .hero-urgency{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    font-size:11.5px;font-weight:700;color:#ffb199;margin-bottom:12px;
+    text-align:center;
+  }
+  .hero-urgency::before{content:"●";color:#ff5c4d;font-size:9px;animation:pulse 1.4s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  .foot-note{
+    position:absolute;bottom:12px;left:0;right:0;text-align:center;
+    font-size:10.5px;color:rgba(255,255,255,.35);padding:0 20px;
+  }
+
+  @media(max-width:480px){
+    .hero-badge img{width:30px;height:30px;}
+    .hero h1{font-size:15px;}
+  }
+  @media(max-height:800px){
+    .hero-badge{margin-bottom:10px;}
+    .hero h1{margin-bottom:10px;}
+    .hero-lead{margin-bottom:8px;}
+    .hero-sub{margin-bottom:6px;}
+    .hero-inner{gap:10px;}
+  }
+  @media(max-height:580px){
+    .hero-proof{display:none;}
+  }
+
+  /* ══════ QUIZ POPUP ══════ */
+  .quiz-overlay{
+    position:fixed;inset:0;z-index:10000;background:rgba(14,28,38,.78);
+    display:none;align-items:center;justify-content:center;padding:20px;
+    backdrop-filter:blur(3px);
+  }
+  .quiz-overlay.active{display:flex;}
+  .quiz-box{
+    background:var(--cream);border-radius:18px;width:100%;max-width:440px;
+    max-height:88vh;overflow-y:auto;position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    animation:quizIn .25s ease;
+  }
+  @keyframes quizIn{from{opacity:0;transform:translateY(14px) scale(.98);}to{opacity:1;transform:translateY(0) scale(1);}}
+  .quiz-head{
+    background:var(--navy);padding:18px 22px 16px;border-radius:18px 18px 0 0;
+    position:sticky;top:0;z-index:2;
+  }
+  .quiz-close{
+    position:absolute;top:14px;right:16px;background:none;border:none;
+    color:rgba(255,255,255,.6);font-size:22px;cursor:pointer;line-height:1;
+    width:30px;height:30px;
+  }
+  .quiz-close:hover{color:#fff;}
+  .quiz-progress-track{width:100%;height:6px;background:rgba(255,255,255,.15);border-radius:6px;overflow:hidden;margin-top:6px;}
+  .quiz-progress-fill{height:100%;background:var(--orange);border-radius:6px;transition:width .3s ease;width:0%;}
+  .quiz-notice{font-size:12.5px;font-weight:700;color:var(--orange);margin-bottom:8px;}
+  .quiz-step-label{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+  .quiz-body{padding:28px 24px 30px;}
+  .quiz-question{font-family:'Fraunces',serif;font-size:16.5px;line-height:1.4;color:var(--ink);margin-bottom:18px;}
+  .quiz-options{display:flex;flex-direction:column;gap:10px;}
+  .quiz-opt{
+    display:block;width:100%;text-align:left;background:#fff;border:1.5px solid #e2d9c6;
+    border-radius:10px;padding:15px 18px;font-family:'Inter',sans-serif;font-size:15px;
+    font-weight:700;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s;
+  }
+  .quiz-opt:hover{border-color:var(--orange);background:#fff8f2;}
+  .quiz-opt-multi{display:flex;align-items:center;gap:12px;}
+  .quiz-opt-check{
+    flex-shrink:0;width:20px;height:20px;border-radius:6px;border:1.5px solid #d8cdb4;
+    background:#fff;position:relative;transition:border-color .15s,background .15s;
+  }
+  .quiz-opt-multi.selected{border-color:var(--orange);background:#fff8f2;}
+  .quiz-opt-multi.selected .quiz-opt-check{background:var(--orange);border-color:var(--orange);}
+  .quiz-opt-multi.selected .quiz-opt-check::after{
+    content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
+    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
+  }
+  .quiz-input{
+    width:100%;border:1.5px solid #e2d9c6;border-radius:10px;padding:15px 16px;
+    font-family:'Inter',sans-serif;font-size:15.5px;color:var(--ink);background:#fff;
+    margin-bottom:14px;outline:none;transition:border-color .15s;
+  }
+  .quiz-input:focus{border-color:var(--orange);}
+  textarea.quiz-input{resize:vertical;min-height:88px;font-family:'Inter',sans-serif;}
+  .quiz-final{text-align:center;}
+  .quiz-final .ic-ok{
+    width:60px;height:60px;border-radius:50%;background:var(--orange);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+    font-size:28px;color:#fff;
+  }
+  .quiz-final h3{font-size:21px;color:var(--ink);margin-bottom:10px;line-height:1.35;}
+  .quiz-final p{font-size:14.5px;color:var(--muted-ink);line-height:1.65;margin-bottom:24px;}
+  .quiz-final .btn{width:100%;font-size:15.5px;}
+  .quiz-reject .ic-ok{background:var(--navy2);}
+  .btn-whatsapp{
+    background:#25D366;box-shadow:0 8px 24px rgba(37,211,102,.35);
+  }
+  .btn-whatsapp:hover{background:#1ebe5a;}
+  .quiz-back{
+    background:none;border:none;color:var(--muted-ink);font-size:13px;
+    cursor:pointer;margin-top:16px;display:inline-flex;align-items:center;gap:5px;
+  }
+  .quiz-back:hover{color:var(--ink);}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HERO — única seção da página (sem scroll)
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-top">
+        <div class="hero-badge">
+          <img src="{{URL_FOTO_DRA_LARISSA}}" alt="Dra. Larissa Lodêtti">
+          <span>Dra. Larissa Lodêtti<em>Nutricionista · Membro IBNF</em></span>
+        </div>
+
+        <h1>Na próxima quarta-feira, às 19 horas, em uma aula ao vivo, você vai entender a verdadeira raiz por trás da disbiose, do SIBO e do intestino permeável.</h1>
+
+        <p class="hero-lead">Depois de mais de 11.000 atendimentos, a Dra. Larissa identificou o padrão por trás da barriga estufada, do intestino travado e do metabolismo lento — mesmo em quem já tentou de tudo.</p>
+
+        <p class="hero-sub"><strong>Se você foi diagnosticada com disbiose, SIBO ou intestino permeável</strong>, nesta aula você vai entender por que toda dieta genérica trata o sintoma e ignora a raiz.</p>
+
+        <p class="hero-sub">Você vai conhecer <strong>os 3 passos do Método START 3R que ela usa em consultório</strong>: reduzir o que inflama, reparar a parede intestinal e repovoar as bactérias certas — sem cortar tudo o que você mais gosta de comer.</p>
+      </div>
+
+      <div class="hero-cta-box">
+        <div class="hero-proof">
+          <span class="stars">★★★★★</span>
+          <span><strong>+1.000 pacientes</strong> atendidos</span>
+        </div>
+
+        <div class="hero-cta-wrap">
+          <span class="hero-urgency">Vagas limitadas no pelo Google Meet</span>
+          <a href="#" class="btn btn-full" onclick="return openQuiz(event)">
+            Quero minha vaga na aula ao vivo →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-note">© 2026 Dra. Larissa Lodêtti · Todos os direitos reservados</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     QUIZ POPUP
+══════════════════════════════════════════ -->
+<div class="quiz-overlay" id="quizOverlay" onclick="if(event.target===this) closeQuiz()">
+  <div class="quiz-box" role="dialog" aria-modal="true" aria-label="Quiz de qualificação">
+    <div class="quiz-head">
+      <button class="quiz-close" onclick="closeQuiz()" aria-label="Fechar">✕</button>
+      <div class="quiz-notice">Responda rapidinho antes de continuar</div>
+      <div class="quiz-step-label" id="quizStepLabel">Pergunta 1 de 4</div>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+    </div>
+    <div class="quiz-body" id="quizBody"><!-- conteúdo injetado via JS --></div>
+  </div>
+</div>
+
+<script>
+function trackCTA(name){
+  if(typeof fbq!=='undefined'){
+    fbq('track','Lead',{content_name:name||'CTA Click'});
+  }
+  return true;
+}
+
+/* ══════════════════════════════════════════
+   QUIZ — Diagnóstico / Tentativas / Grupo exclusivo
+══════════════════════════════════════════ */
+
+// Link do grupo para quem responde SIM na pergunta do programa completo
+var GROUP_LINK_PROGRAMA = "https://chat.whatsapp.com/FoXpjUqNbW930Cts99TmGr";
+
+// Link do grupo para quem responde NÃO (vai só para o grupo da aula ao vivo)
+var GROUP_LINK_AULA = "https://chat.whatsapp.com/JNqRVqau099CUEkc9O2mCG";
+
+// URL do Webhook do n8n que recebe o aviso de Lead
+var N8N_WEBHOOK_URL = "{{URL_WEBHOOK_N8N}}";
+
+var quizAnswers = {};
+var quizStep = 1;
+var QUIZ_TOTAL = 3;
+
+var quizSteps = [
+  {
+    type: "choice",
+    field: "situacao",
+    question: "Você já foi diagnosticada com disbiose, SIBO ou intestino permeável?",
+    options: ["Sim, já fui diagnosticada", "Não, mas sinto os sintomas", "Ainda não sei, quero entender"]
+  },
+  {
+    type: "multi_choice",
+    field: "tentativas",
+    question: "Você já tentou resolver, mas não conseguiu, utilizando alguma das opções abaixo?",
+    options: [
+      "Dietas restritivas (low FODMAP, sem glúten, sem lactose...)",
+      "Probióticos ou suplementos por conta própria",
+      "Chás, remédios caseiros ou fórmulas manipuladas",
+      "Acompanhamento nutricional que não focou na causa",
+      "Não tentei nenhuma dessas opções"
+    ]
+  },
+  {
+    type: "choice",
+    field: "grupo_programa",
+    question: "Quer participar de um grupo exclusivo para conhecer <strong>o programa de acompanhamento completo da doutora Larissa Lodêtti, focado em intestino</strong>?",
+    options: ["SIM", "NÃO"]
+  }
+];
+
+function openQuiz(e){
+  if(e) e.preventDefault();
+  quizStep = 1;
+  quizAnswers = {};
+  renderQuizStep();
+  document.getElementById('quizOverlay').classList.add('active');
+  if(typeof fbq!=='undefined'){
+    fbq('trackCustom','QuizStart');
+  }
+  return false;
+}
+
+function closeQuiz(){
+  document.getElementById('quizOverlay').classList.remove('active');
+}
+
+function renderQuizStep(){
+  var body = document.getElementById('quizBody');
+  var label = document.getElementById('quizStepLabel');
+  var fill = document.getElementById('quizProgressFill');
+
+  var data = quizSteps[quizStep-1];
+  label.textContent = "Pergunta " + quizStep + " de " + QUIZ_TOTAL;
+  fill.style.width = ((quizStep-1)/QUIZ_TOTAL*100) + "%";
+
+  var html = '<div class="quiz-question">'+data.question+'</div>';
+
+  if(data.type === "text"){
+    if(data.textarea){
+      html += '<textarea class="quiz-input" id="quizFieldInput" placeholder="'+data.placeholder+'"></textarea>';
+    } else {
+      html += '<input class="quiz-input" id="quizFieldInput" type="'+data.inputType+'" placeholder="'+data.placeholder+'" autocomplete="off">';
+    }
+    html += '<button class="btn btn-full" onclick="submitQuizText()">Continuar →</button>';
+  } else if(data.type === "choice"){
+    html += '<div class="quiz-options">';
+    data.options.forEach(function(opt, i){
+      html += '<button class="quiz-opt" onclick="selectQuizOption('+i+')">'+opt+'</button>';
+    });
+    html += '</div>';
+  } else if(data.type === "multi_choice"){
+    html += '<div class="quiz-options" id="quizMultiOptions">';
+    data.options.forEach(function(opt, i){
+      html += '<button type="button" class="quiz-opt quiz-opt-multi" data-index="'+i+'" onclick="toggleQuizOption('+i+')">'+
+                '<span class="quiz-opt-check"></span><span>'+opt+'</span>'+
+              '</button>';
+    });
+    html += '</div>';
+    html += '<button class="btn btn-full" style="margin-top:14px;" onclick="submitQuizMulti()">Continuar →</button>';
+  }
+
+  if(quizStep > 1){
+    html += '<button class="quiz-back" onclick="quizBack()">← Voltar</button>';
+  }
+
+  body.innerHTML = html;
+
+  if(data.type === "text"){
+    var input = document.getElementById('quizFieldInput');
+    input.focus();
+    input.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' && !data.textarea){
+        submitQuizText();
+      }
+    });
+  }
+}
+
+function submitQuizText(){
+  var data = quizSteps[quizStep-1];
+  var input = document.getElementById('quizFieldInput');
+  var value = input.value.trim();
+
+  if(!value){
+    input.style.borderColor = '#d9463f';
+    input.focus();
+    return;
+  }
+
+  quizAnswers[data.field] = value;
+  advanceQuiz();
+}
+
+function selectQuizOption(index){
+  var data = quizSteps[quizStep-1];
+  quizAnswers[data.field] = data.options[index];
+  advanceQuiz();
+}
+
+function toggleQuizOption(index){
+  var btn = document.querySelector('.quiz-opt-multi[data-index="'+index+'"]');
+  btn.classList.toggle('selected');
+}
+
+function submitQuizMulti(){
+  var data = quizSteps[quizStep-1];
+  var selected = [];
+  document.querySelectorAll('.quiz-opt-multi.selected').forEach(function(btn){
+    selected.push(data.options[parseInt(btn.getAttribute('data-index'), 10)]);
+  });
+  quizAnswers[data.field] = selected;
+  advanceQuiz();
+}
+
+function advanceQuiz(){
+  quizStep++;
+  if(quizStep > QUIZ_TOTAL){
+    renderQuizFinal();
+  } else {
+    renderQuizStep();
+  }
+  document.querySelector('.quiz-box').scrollTop = 0;
+}
+
+function quizBack(){
+  if(quizStep > 1){
+    quizStep--;
+    renderQuizStep();
+  }
+}
+
+function renderQuizFinal(){
+  var label = document.getElementById('quizStepLabel');
+  var fill = document.getElementById('quizProgressFill');
+  var body = document.getElementById('quizBody');
+
+  label.textContent = "Pronto!";
+  fill.style.width = "100%";
+
+  var isSim = quizAnswers.grupo_programa === "SIM";
+  var linkDestino = isSim ? GROUP_LINK_PROGRAMA : GROUP_LINK_AULA;
+  var tituloFinal = "Perfeito, sua vaga está quase garantida!";
+  var textoFinal = isSim
+    ? "Clique no botão abaixo para entrar no grupo exclusivo, participar da aula ao vivo e conhecer <strong>o programa de acompanhamento completo da Dra. Larissa</strong>."
+    : "Clique no botão abaixo para entrar no grupo e receber o link da aula ao vivo de quarta-feira com a Dra. Larissa.";
+  var textoBotao = isSim ? "Entrar no Grupo Exclusivo →" : "Entrar no Grupo da Aula →";
+
+  body.innerHTML =
+    '<div class="quiz-final">' +
+      '<div class="ic-ok">✓</div>' +
+      '<h3>'+tituloFinal+'</h3>' +
+      '<p>'+textoFinal+'</p>' +
+      '<a href="'+linkDestino+'" target="_blank" rel="noopener noreferrer" class="btn btn-full btn-whatsapp" onclick="quizFinalClick()">'+
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" fill="#fff" style="flex-shrink:0;">'+
+          '<path d="M24 4C12.95 4 4 12.95 4 24c0 3.55.93 6.88 2.56 9.77L4 44l10.56-2.52A19.86 19.86 0 0 0 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm0 36c-3.14 0-6.1-.82-8.66-2.26l-.62-.37-6.27 1.5 1.53-6.1-.4-.64A15.93 15.93 0 0 1 8 24c0-8.82 7.18-16 16-16s16 7.18 16 16-7.18 16-16 16zm8.77-11.76c-.48-.24-2.84-1.4-3.28-1.56-.44-.16-.76-.24-1.08.24-.32.48-1.24 1.56-1.52 1.88-.28.32-.56.36-1.04.12-.48-.24-2.03-.75-3.87-2.39-1.43-1.28-2.4-2.85-2.68-3.33-.28-.48-.03-.74.21-.98.22-.22.48-.56.72-.84.24-.28.32-.48.48-.8.16-.32.08-.6-.04-.84-.12-.24-1.08-2.6-1.48-3.56-.38-.92-.78-.8-1.08-.82-.28-.01-.6-.01-.92-.01-.32 0-.84.12-1.28.6-.44.48-1.68 1.64-1.68 4s1.72 4.64 1.96 4.96c.24.32 3.38 5.16 8.2 7.24 1.15.5 2.04.8 2.74 1.02 1.15.36 2.2.31 3.02.19.92-.14 2.84-1.16 3.24-2.28.4-1.12.4-2.08.28-2.28-.12-.2-.44-.32-.92-.56z"/>'+
+        '</svg>'+
+        textoBotao+
+      '</a>' +
+    '</div>';
+
+  if(typeof fbq!=='undefined'){
+    fbq('trackCustom', isSim ? 'QuizGrupoPrograma' : 'QuizGrupoAula', quizAnswers);
+  }
+}
+
+function quizFinalClick(){
+  var eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+
+  if(typeof fbq!=='undefined'){
+    fbq('track', 'Lead', {content_name: 'Entrar no Grupo - Webinario Dra Larissa'}, {eventID: eventId});
+  }
+
+  fetch(N8N_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      situacao: quizAnswers.situacao,
+      tentativas: quizAnswers.tentativas,
+      grupo_programa: quizAnswers.grupo_programa,
+      event_id: eventId,
+      event_source_url: window.location.href
+    })
+  });
+}
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    closeQuiz();
+  }
+});
+</script>
+
+</body>
+</html>
