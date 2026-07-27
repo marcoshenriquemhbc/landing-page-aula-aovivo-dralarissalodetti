@@ -2,8 +2,22 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dra. Larissa Lodêtti | Aula ao Vivo — Método START 3R</title>
+<meta name="description" content="Aula ao vivo gratuita com a nutricionista Dra. Larissa Lodêtti sobre disbiose, SIBO e intestino permeável. Vagas limitadas — garanta a sua.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0e1c26">
+<link rel="canonical" href="{{URL_CANONICA}}">
+
+<!-- Open Graph / compartilhamento -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Dra. Larissa Lodêtti | Aula ao Vivo — Método START 3R">
+<meta property="og:description" content="Aula ao vivo gratuita sobre disbiose, SIBO e intestino permeável com a Dra. Larissa Lodêtti. Vagas limitadas.">
+<meta property="og:image" content="{{URL_IMAGEM_OG}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dra. Larissa Lodêtti | Aula ao Vivo — Método START 3R">
+<meta name="twitter:description" content="Aula ao vivo gratuita sobre disbiose, SIBO e intestino permeável com a Dra. Larissa Lodêtti. Vagas limitadas.">
 
 <!-- Meta Pixel Code -->
 <script>
@@ -20,12 +34,16 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
+alt=""
 /></noscript>
 <!-- End Meta Pixel Code -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<!-- Fontes carregadas de forma assíncrona (não bloqueiam a renderização) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap" media="print" onload="this.media='all';this.onload=null;">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap"></noscript>
 
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -33,7 +51,10 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
     --navy:#0e1c26;
     --navy2:#152b38;
     --orange:#ee7b39;
-    --orange2:#d9631f;
+    --orange2:#8f3e15;
+    --orange-btn:#a84a19;
+    --whatsapp:#0d6b35;
+    --whatsapp-hover:#0a5429;
     --purple:#b98eff;
     --cream:#f6f2ea;
     --white:#ffffff;
@@ -42,7 +63,7 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
     --muted-ink:#5a5a52;
   }
 
-  /* ══════ TRAVA DE ROLAGEM — só a primeira dobra existe ══════ */
+  /* Trava de rolagem — só a primeira dobra existe */
   html,body{
     height:100%;
     overflow:hidden;
@@ -55,17 +76,18 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
   h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;}
   .container{max-width:1080px;margin:0 auto;padding:0 24px;height:100%;display:flex;flex-direction:column;}
   img{max-width:100%;display:block;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    background:var(--orange);color:#fff;font-weight:900;font-size:14px;
+    background:var(--orange-btn);color:#fff;font-weight:900;font-size:14px;
     text-decoration:none;border-radius:40px;padding:17px 30px;
     transition:transform .15s,background .15s;border:none;cursor:pointer;
-    box-shadow:0 8px 24px rgba(238,123,57,.35);
+    box-shadow:0 8px 24px rgba(168,74,25,.35);
   }
-  .btn:hover{background:var(--orange2);transform:translateY(-2px);}
+  .btn:hover,.btn:focus-visible{background:var(--orange2);transform:translateY(-2px);}
+  .btn:focus-visible{outline:2px solid #fff;outline-offset:3px;}
   .btn-full{width:100%;}
-  .btn-sub{display:block;text-align:center;font-size:12.5px;color:var(--muted);margin-top:10px;}
 
   /* ══════ HERO (única dobra da página) ══════ */
   .hero{
@@ -144,7 +166,7 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
 
   .foot-note{
     position:absolute;bottom:12px;left:0;right:0;text-align:center;
-    font-size:10.5px;color:rgba(255,255,255,.35);padding:0 20px;
+    font-size:10.5px;color:rgba(255,255,255,.62);padding:0 20px;
   }
 
   @media(max-width:480px){
@@ -185,7 +207,8 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
     color:rgba(255,255,255,.6);font-size:22px;cursor:pointer;line-height:1;
     width:30px;height:30px;
   }
-  .quiz-close:hover{color:#fff;}
+  .quiz-close:hover,.quiz-close:focus-visible{color:#fff;}
+  .quiz-close:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:4px;}
   .quiz-progress-track{width:100%;height:6px;background:rgba(255,255,255,.15);border-radius:6px;overflow:hidden;margin-top:6px;}
   .quiz-progress-fill{height:100%;background:var(--orange);border-radius:6px;transition:width .3s ease;width:0%;}
   .quiz-notice{font-size:12.5px;font-weight:700;color:var(--orange);margin-bottom:8px;}
@@ -198,7 +221,8 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
     border-radius:10px;padding:15px 18px;font-family:'Inter',sans-serif;font-size:15px;
     font-weight:700;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s;
   }
-  .quiz-opt:hover{border-color:var(--orange);background:#fff8f2;}
+  .quiz-opt:hover,.quiz-opt:focus-visible{border-color:var(--orange);background:#fff8f2;}
+  .quiz-opt:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
   .quiz-opt-multi{display:flex;align-items:center;gap:12px;}
   .quiz-opt-check{
     flex-shrink:0;width:20px;height:20px;border-radius:6px;border:1.5px solid #d8cdb4;
@@ -210,32 +234,24 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
     content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
     border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
   }
-  .quiz-input{
-    width:100%;border:1.5px solid #e2d9c6;border-radius:10px;padding:15px 16px;
-    font-family:'Inter',sans-serif;font-size:15.5px;color:var(--ink);background:#fff;
-    margin-bottom:14px;outline:none;transition:border-color .15s;
-  }
-  .quiz-input:focus{border-color:var(--orange);}
-  textarea.quiz-input{resize:vertical;min-height:88px;font-family:'Inter',sans-serif;}
   .quiz-final{text-align:center;}
   .quiz-final .ic-ok{
-    width:60px;height:60px;border-radius:50%;background:var(--orange);
+    width:60px;height:60px;border-radius:50%;background:var(--orange-btn);
     display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
     font-size:28px;color:#fff;
   }
   .quiz-final h3{font-size:21px;color:var(--ink);margin-bottom:10px;line-height:1.35;}
   .quiz-final p{font-size:14.5px;color:var(--muted-ink);line-height:1.65;margin-bottom:24px;}
   .quiz-final .btn{width:100%;font-size:15.5px;}
-  .quiz-reject .ic-ok{background:var(--navy2);}
   .btn-whatsapp{
-    background:#25D366;box-shadow:0 8px 24px rgba(37,211,102,.35);
+    background:var(--whatsapp);box-shadow:0 8px 24px rgba(13,107,53,.35);
   }
-  .btn-whatsapp:hover{background:#1ebe5a;}
+  .btn-whatsapp:hover,.btn-whatsapp:focus-visible{background:var(--whatsapp-hover);}
   .quiz-back{
     background:none;border:none;color:var(--muted-ink);font-size:13px;
     cursor:pointer;margin-top:16px;display:inline-flex;align-items:center;gap:5px;
   }
-  .quiz-back:hover{color:var(--ink);}
+  .quiz-back:hover,.quiz-back:focus-visible{color:var(--ink);}
 </style>
 </head>
 <body>
@@ -248,7 +264,7 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
     <div class="hero-inner">
       <div class="hero-top">
         <div class="hero-badge">
-          <img src="{{URL_FOTO_DRA_LARISSA}}" alt="Dra. Larissa Lodêtti">
+          <img src="{{URL_FOTO_DRA_LARISSA}}" alt="Dra. Larissa Lodêtti" width="34" height="34" loading="eager" fetchpriority="high" decoding="async">
           <span>Dra. Larissa Lodêtti<em>Nutricionista · Membro IBNF</em></span>
         </div>
 
@@ -263,7 +279,8 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
 
       <div class="hero-cta-box">
         <div class="hero-proof">
-          <span class="stars">★★★★★</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="sr-only">Avaliação 5 de 5 estrelas.</span>
           <span><strong>+1.000 pacientes</strong> atendidos</span>
         </div>
 
@@ -287,21 +304,14 @@ src="https://www.facebook.com/tr?id={{SEU_PIXEL_ID}}&ev=PageView&noscript=1"
     <div class="quiz-head">
       <button class="quiz-close" onclick="closeQuiz()" aria-label="Fechar">✕</button>
       <div class="quiz-notice">Responda rapidinho antes de continuar</div>
-      <div class="quiz-step-label" id="quizStepLabel">Pergunta 1 de 4</div>
+      <div class="quiz-step-label" id="quizStepLabel">Pergunta 1 de 3</div>
       <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
     </div>
-    <div class="quiz-body" id="quizBody"><!-- conteúdo injetado via JS --></div>
+    <div class="quiz-body" id="quizBody" aria-live="polite"><!-- conteúdo injetado via JS --></div>
   </div>
 </div>
 
 <script>
-function trackCTA(name){
-  if(typeof fbq!=='undefined'){
-    fbq('track','Lead',{content_name:name||'CTA Click'});
-  }
-  return true;
-}
-
 /* ══════════════════════════════════════════
    QUIZ — Diagnóstico / Tentativas / Grupo exclusivo
 ══════════════════════════════════════════ */
@@ -318,6 +328,7 @@ var N8N_WEBHOOK_URL = "{{URL_WEBHOOK_N8N}}";
 var quizAnswers = {};
 var quizStep = 1;
 var QUIZ_TOTAL = 3;
+var quizLastFocusedEl = null;
 
 var quizSteps = [
   {
@@ -350,8 +361,11 @@ function openQuiz(e){
   if(e) e.preventDefault();
   quizStep = 1;
   quizAnswers = {};
+  quizLastFocusedEl = document.activeElement;
   renderQuizStep();
   document.getElementById('quizOverlay').classList.add('active');
+  var closeBtn = document.querySelector('.quiz-close');
+  if(closeBtn) closeBtn.focus();
   if(typeof fbq!=='undefined'){
     fbq('trackCustom','QuizStart');
   }
@@ -360,6 +374,9 @@ function openQuiz(e){
 
 function closeQuiz(){
   document.getElementById('quizOverlay').classList.remove('active');
+  if(quizLastFocusedEl && typeof quizLastFocusedEl.focus === 'function'){
+    quizLastFocusedEl.focus();
+  }
 }
 
 function renderQuizStep(){
@@ -373,60 +390,28 @@ function renderQuizStep(){
 
   var html = '<div class="quiz-question">'+data.question+'</div>';
 
-  if(data.type === "text"){
-    if(data.textarea){
-      html += '<textarea class="quiz-input" id="quizFieldInput" placeholder="'+data.placeholder+'"></textarea>';
-    } else {
-      html += '<input class="quiz-input" id="quizFieldInput" type="'+data.inputType+'" placeholder="'+data.placeholder+'" autocomplete="off">';
-    }
-    html += '<button class="btn btn-full" onclick="submitQuizText()">Continuar →</button>';
-  } else if(data.type === "choice"){
+  if(data.type === "choice"){
     html += '<div class="quiz-options">';
     data.options.forEach(function(opt, i){
-      html += '<button class="quiz-opt" onclick="selectQuizOption('+i+')">'+opt+'</button>';
+      html += '<button type="button" class="quiz-opt" onclick="selectQuizOption('+i+')">'+opt+'</button>';
     });
     html += '</div>';
   } else if(data.type === "multi_choice"){
     html += '<div class="quiz-options" id="quizMultiOptions">';
     data.options.forEach(function(opt, i){
-      html += '<button type="button" class="quiz-opt quiz-opt-multi" data-index="'+i+'" onclick="toggleQuizOption('+i+')">'+
-                '<span class="quiz-opt-check"></span><span>'+opt+'</span>'+
+      html += '<button type="button" class="quiz-opt quiz-opt-multi" data-index="'+i+'" aria-pressed="false" onclick="toggleQuizOption('+i+')">'+
+                '<span class="quiz-opt-check" aria-hidden="true"></span><span>'+opt+'</span>'+
               '</button>';
     });
     html += '</div>';
-    html += '<button class="btn btn-full" style="margin-top:14px;" onclick="submitQuizMulti()">Continuar →</button>';
+    html += '<button type="button" class="btn btn-full" style="margin-top:14px;" onclick="submitQuizMulti()">Continuar →</button>';
   }
 
   if(quizStep > 1){
-    html += '<button class="quiz-back" onclick="quizBack()">← Voltar</button>';
+    html += '<button type="button" class="quiz-back" onclick="quizBack()">← Voltar</button>';
   }
 
   body.innerHTML = html;
-
-  if(data.type === "text"){
-    var input = document.getElementById('quizFieldInput');
-    input.focus();
-    input.addEventListener('keydown', function(ev){
-      if(ev.key === 'Enter' && !data.textarea){
-        submitQuizText();
-      }
-    });
-  }
-}
-
-function submitQuizText(){
-  var data = quizSteps[quizStep-1];
-  var input = document.getElementById('quizFieldInput');
-  var value = input.value.trim();
-
-  if(!value){
-    input.style.borderColor = '#d9463f';
-    input.focus();
-    return;
-  }
-
-  quizAnswers[data.field] = value;
-  advanceQuiz();
 }
 
 function selectQuizOption(index){
@@ -437,7 +422,8 @@ function selectQuizOption(index){
 
 function toggleQuizOption(index){
   var btn = document.querySelector('.quiz-opt-multi[data-index="'+index+'"]');
-  btn.classList.toggle('selected');
+  var selected = btn.classList.toggle('selected');
+  btn.setAttribute('aria-pressed', selected ? 'true' : 'false');
 }
 
 function submitQuizMulti(){
@@ -485,11 +471,11 @@ function renderQuizFinal(){
 
   body.innerHTML =
     '<div class="quiz-final">' +
-      '<div class="ic-ok">✓</div>' +
+      '<div class="ic-ok" aria-hidden="true">✓</div>' +
       '<h3>'+tituloFinal+'</h3>' +
       '<p>'+textoFinal+'</p>' +
       '<a href="'+linkDestino+'" target="_blank" rel="noopener noreferrer" class="btn btn-full btn-whatsapp" onclick="quizFinalClick()">'+
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" fill="#fff" style="flex-shrink:0;">'+
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" fill="#fff" style="flex-shrink:0;" aria-hidden="true" focusable="false">'+
           '<path d="M24 4C12.95 4 4 12.95 4 24c0 3.55.93 6.88 2.56 9.77L4 44l10.56-2.52A19.86 19.86 0 0 0 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm0 36c-3.14 0-6.1-.82-8.66-2.26l-.62-.37-6.27 1.5 1.53-6.1-.4-.64A15.93 15.93 0 0 1 8 24c0-8.82 7.18-16 16-16s16 7.18 16 16-7.18 16-16 16zm8.77-11.76c-.48-.24-2.84-1.4-3.28-1.56-.44-.16-.76-.24-1.08.24-.32.48-1.24 1.56-1.52 1.88-.28.32-.56.36-1.04.12-.48-.24-2.03-.75-3.87-2.39-1.43-1.28-2.4-2.85-2.68-3.33-.28-.48-.03-.74.21-.98.22-.22.48-.56.72-.84.24-.28.32-.48.48-.8.16-.32.08-.6-.04-.84-.12-.24-1.08-2.6-1.48-3.56-.38-.92-.78-.8-1.08-.82-.28-.01-.6-.01-.92-.01-.32 0-.84.12-1.28.6-.44.48-1.68 1.64-1.68 4s1.72 4.64 1.96 4.96c.24.32 3.38 5.16 8.2 7.24 1.15.5 2.04.8 2.74 1.02 1.15.36 2.2.31 3.02.19.92-.14 2.84-1.16 3.24-2.28.4-1.12.4-2.08.28-2.28-.12-.2-.44-.32-.92-.56z"/>'+
         '</svg>'+
         textoBotao+
@@ -508,22 +494,42 @@ function quizFinalClick(){
     fbq('track', 'Lead', {content_name: 'Entrar no Grupo - Webinario Dra Larissa'}, {eventID: eventId});
   }
 
-  fetch(N8N_WEBHOOK_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      situacao: quizAnswers.situacao,
-      tentativas: quizAnswers.tentativas,
-      grupo_programa: quizAnswers.grupo_programa,
-      event_id: eventId,
-      event_source_url: window.location.href
-    })
-  });
+  if(N8N_WEBHOOK_URL && N8N_WEBHOOK_URL.indexOf('http') === 0){
+    fetch(N8N_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        situacao: quizAnswers.situacao,
+        tentativas: quizAnswers.tentativas,
+        grupo_programa: quizAnswers.grupo_programa,
+        event_id: eventId,
+        event_source_url: window.location.href
+      })
+    }).catch(function(){ /* falha silenciosa: não bloqueia o redirecionamento do usuário */ });
+  }
 }
 
 document.addEventListener('keydown', function(e){
+  var overlay = document.getElementById('quizOverlay');
+  if(!overlay.classList.contains('active')) return;
+
   if(e.key === 'Escape'){
     closeQuiz();
+    return;
+  }
+
+  if(e.key === 'Tab'){
+    var focusable = overlay.querySelectorAll('button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])');
+    if(!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length-1];
+    if(e.shiftKey && document.activeElement === first){
+      e.preventDefault();
+      last.focus();
+    } else if(!e.shiftKey && document.activeElement === last){
+      e.preventDefault();
+      first.focus();
+    }
   }
 });
 </script>
