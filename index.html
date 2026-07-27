@@ -530,9 +530,12 @@ function quizFinalClick(){
         tentativas: quizAnswers.tentativas,
         grupo_programa: quizAnswers.grupo_programa,
         event_id: eventId,
-        event_source_url: window.location.href
+        event_source_url: window.location.href,
+        fbc: capturedFbc,
+        fbp: getCookie('_fbp'),
+        user_agent: navigator.userAgent
       })
-    }).catch(function(){ /* falha silenciosa: não bloqueia o redirecionamento do usuário */ });
+    }).catch(function(){});
   }
 }
 
