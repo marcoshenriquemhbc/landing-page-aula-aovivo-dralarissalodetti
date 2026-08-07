@@ -37,6 +37,7 @@ src="https://www.facebook.com/tr?id=1388181216466429&ev=PageView&noscript=1"
 alt=""
 /></noscript>
 <!-- End Meta Pixel Code -->
+
 <script>
 function getCookie(name) {
   var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -65,9 +66,9 @@ function ensureFbc() {
 }
 var capturedFbc = ensureFbc();
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Fontes carregadas de forma assíncrona (não bloqueiam a renderização) -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap" media="print" onload="this.media='all';this.onload=null;">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;600;700;900&display=swap"></noscript>
@@ -90,7 +91,6 @@ var capturedFbc = ensureFbc();
     --muted-ink:#5a5a52;
   }
 
-  /* Trava de rolagem — só a primeira dobra existe */
   html,body{
     height:100%;
     overflow:hidden;
@@ -106,17 +106,16 @@ var capturedFbc = ensureFbc();
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    background:var(--orange-btn);color:#fff;font-weight:900;font-size:14px;
-    text-decoration:none;border-radius:40px;padding:17px 30px;
+    display:inline-flex;align-items:center;justify-content:center;gap:7px;
+    background:var(--whatsapp);color:#fff;font-weight:800;font-size:13.5px;
+    text-decoration:none;border-radius:40px;padding:15px 18px;
     transition:transform .15s,background .15s;border:none;cursor:pointer;
-    box-shadow:0 8px 24px rgba(168,74,25,.35);
+    box-shadow:0 8px 24px rgba(13,107,53,.35);white-space:nowrap;
   }
-  .btn:hover,.btn:focus-visible{background:var(--orange2);transform:translateY(-2px);}
+  .btn:hover,.btn:focus-visible{background:var(--whatsapp-hover);transform:translateY(-2px);}
   .btn:focus-visible{outline:2px solid #fff;outline-offset:3px;}
   .btn-full{width:100%;}
 
-  /* ══════ HERO (única dobra da página) ══════ */
   .hero{
     position:relative;
     height:100vh;
@@ -199,6 +198,7 @@ var capturedFbc = ensureFbc();
   @media(max-width:480px){
     .hero-badge img{width:30px;height:30px;}
     .hero h1{font-size:15px;}
+    .btn{font-size:12.5px;padding:14px 12px;}
   }
   @media(max-height:800px){
     .hero-badge{margin-bottom:10px;}
@@ -210,82 +210,10 @@ var capturedFbc = ensureFbc();
   @media(max-height:580px){
     .hero-proof{display:none;}
   }
-
-  /* ══════ QUIZ POPUP ══════ */
-  .quiz-overlay{
-    position:fixed;inset:0;z-index:10000;background:rgba(14,28,38,.78);
-    display:none;align-items:center;justify-content:center;padding:20px;
-    backdrop-filter:blur(3px);
-  }
-  .quiz-overlay.active{display:flex;}
-  .quiz-box{
-    background:var(--cream);border-radius:18px;width:100%;max-width:440px;
-    max-height:88vh;overflow-y:auto;position:relative;
-    box-shadow:0 20px 60px rgba(0,0,0,.4);
-    animation:quizIn .25s ease;
-  }
-  @keyframes quizIn{from{opacity:0;transform:translateY(14px) scale(.98);}to{opacity:1;transform:translateY(0) scale(1);}}
-  .quiz-head{
-    background:var(--navy);padding:18px 22px 16px;border-radius:18px 18px 0 0;
-    position:sticky;top:0;z-index:2;
-  }
-  .quiz-close{
-    position:absolute;top:14px;right:16px;background:none;border:none;
-    color:rgba(255,255,255,.6);font-size:22px;cursor:pointer;line-height:1;
-    width:30px;height:30px;
-  }
-  .quiz-close:hover,.quiz-close:focus-visible{color:#fff;}
-  .quiz-close:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:4px;}
-  .quiz-progress-track{width:100%;height:6px;background:rgba(255,255,255,.15);border-radius:6px;overflow:hidden;margin-top:6px;}
-  .quiz-progress-fill{height:100%;background:var(--orange);border-radius:6px;transition:width .3s ease;width:0%;}
-  .quiz-notice{font-size:12.5px;font-weight:700;color:var(--orange);margin-bottom:8px;}
-  .quiz-step-label{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
-  .quiz-body{padding:28px 24px 30px;}
-  .quiz-question{font-family:'Fraunces',serif;font-size:16.5px;line-height:1.4;color:var(--ink);margin-bottom:18px;}
-  .quiz-options{display:flex;flex-direction:column;gap:10px;}
-  .quiz-opt{
-    display:block;width:100%;text-align:left;background:#fff;border:1.5px solid #e2d9c6;
-    border-radius:10px;padding:15px 18px;font-family:'Inter',sans-serif;font-size:15px;
-    font-weight:700;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s;
-  }
-  .quiz-opt:hover,.quiz-opt:focus-visible{border-color:var(--orange);background:#fff8f2;}
-  .quiz-opt:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
-  .quiz-opt-multi{display:flex;align-items:center;gap:12px;}
-  .quiz-opt-check{
-    flex-shrink:0;width:20px;height:20px;border-radius:6px;border:1.5px solid #d8cdb4;
-    background:#fff;position:relative;transition:border-color .15s,background .15s;
-  }
-  .quiz-opt-multi.selected{border-color:var(--orange);background:#fff8f2;}
-  .quiz-opt-multi.selected .quiz-opt-check{background:var(--orange);border-color:var(--orange);}
-  .quiz-opt-multi.selected .quiz-opt-check::after{
-    content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
-    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
-  }
-  .quiz-final{text-align:center;}
-  .quiz-final .ic-ok{
-    width:60px;height:60px;border-radius:50%;background:var(--orange-btn);
-    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
-    font-size:28px;color:#fff;
-  }
-  .quiz-final h3{font-size:21px;color:var(--ink);margin-bottom:10px;line-height:1.35;}
-  .quiz-final p{font-size:14.5px;color:var(--muted-ink);line-height:1.65;margin-bottom:24px;}
-  .quiz-final .btn{width:100%;font-size:15.5px;}
-  .btn-whatsapp{
-    background:var(--whatsapp);box-shadow:0 8px 24px rgba(13,107,53,.35);
-  }
-  .btn-whatsapp:hover,.btn-whatsapp:focus-visible{background:var(--whatsapp-hover);}
-  .quiz-back{
-    background:none;border:none;color:var(--muted-ink);font-size:13px;
-    cursor:pointer;margin-top:16px;display:inline-flex;align-items:center;gap:5px;
-  }
-  .quiz-back:hover,.quiz-back:focus-visible{color:var(--ink);}
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     HERO — única seção da página (sem scroll)
-══════════════════════════════════════════ -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
@@ -312,8 +240,11 @@ var capturedFbc = ensureFbc();
         </div>
 
         <div class="hero-cta-wrap">
-          <span class="hero-urgency">Vagas limitadas no pelo Google Meet</span>
-          <a href="#" class="btn btn-full" onclick="return openQuiz(event)">
+          <span class="hero-urgency">Vagas limitadas pelo Google Meet</span>
+          <a href="https://chat.whatsapp.com/FoXpjUqNbW930Cts99TmGr" id="ctaWhatsApp" target="_blank" rel="noopener noreferrer" class="btn btn-full" onclick="handleCtaClick(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18" fill="#fff" style="flex-shrink:0;" aria-hidden="true">
+              <path d="M24 4C12.95 4 4 12.95 4 24c0 3.55.93 6.88 2.56 9.77L4 44l10.56-2.52A19.86 19.86 0 0 0 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm0 36c-3.14 0-6.1-.82-8.66-2.26l-.62-.37-6.27 1.5 1.53-6.1-.4-.64A15.93 15.93 0 0 1 8 24c0-8.82 7.18-16 16-16s16 7.18 16 16-7.18 16-16 16zm8.77-11.76c-.48-.24-2.84-1.4-3.28-1.56-.44-.16-.76-.24-1.08.24-.32.48-1.24 1.56-1.52 1.88-.28.32-.56.36-1.04.12-.48-.24-2.03-.75-3.87-2.39-1.43-1.28-2.4-2.85-2.68-3.33-.28-.48-.03-.74.21-.98.22-.22.48-.56.72-.84.24-.28.32-.48.48-.8.16-.32.08-.6-.04-.84-.12-.24-1.08-2.6-1.48-3.56-.38-.92-.78-.8-1.08-.82-.28-.01-.6-.01-.92-.01-.32 0-.84.12-1.28.6-.44.48-1.68 1.64-1.68 4s1.72 4.64 1.96 4.96c.24.32 3.38 5.16 8.2 7.24 1.15.5 2.04.8 2.74 1.02 1.15.36 2.2.31 3.02.19.92-.14 2.84-1.16 3.24-2.28.4-1.12.4-2.08.28-2.28-.12-.2-.44-.32-.92-.56z"/>
+            </svg>
             Quero minha vaga na aula ao vivo →
           </a>
         </div>
@@ -323,212 +254,26 @@ var capturedFbc = ensureFbc();
   <div class="foot-note">© 2026 Dra. Larissa Lodêtti · Todos os direitos reservados</div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     QUIZ POPUP
-══════════════════════════════════════════ -->
-<div class="quiz-overlay" id="quizOverlay" onclick="if(event.target===this) closeQuiz()">
-  <div class="quiz-box" role="dialog" aria-modal="true" aria-label="Quiz de qualificação">
-    <div class="quiz-head">
-      <button class="quiz-close" onclick="closeQuiz()" aria-label="Fechar">✕</button>
-      <div class="quiz-notice">Responda rapidinho antes de continuar</div>
-      <div class="quiz-step-label" id="quizStepLabel">Pergunta 1 de 3</div>
-      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
-    </div>
-    <div class="quiz-body" id="quizBody" aria-live="polite"><!-- conteúdo injetado via JS --></div>
-  </div>
-</div>
-
 <script>
-/* ══════════════════════════════════════════
-   QUIZ — Diagnóstico / Tentativas / Grupo exclusivo
-══════════════════════════════════════════ */
-
-// Link do grupo para quem responde SIM na pergunta do programa completo
-var GROUP_LINK_PROGRAMA = "https://chat.whatsapp.com/FoXpjUqNbW930Cts99TmGr";
-
-// Link do grupo para quem responde NÃO (vai só para o grupo da aula ao vivo)
-var GROUP_LINK_AULA = "https://chat.whatsapp.com/JNqRVqau099CUEkc9O2mCG";
-
-// URL do Webhook do n8n que recebe o aviso de Lead
+var LINK_GRUPO_WHATSAPP = "https://chat.whatsapp.com/FoXpjUqNbW930Cts99TmGr";
 var N8N_WEBHOOK_URL = "https://n8n.iaatende.click/webhook/9fb446c9-8ca1-456f-b00d-635121b9634a";
 
-var quizAnswers = {};
-var quizStep = 1;
-var QUIZ_TOTAL = 3;
-var quizLastFocusedEl = null;
-
-var quizSteps = [
-  {
-    type: "choice",
-    field: "situacao",
-    question: "Você já foi diagnosticada com disbiose, SIBO ou intestino permeável?",
-    options: ["Sim, já fui diagnosticada", "Não, mas sinto os sintomas", "Ainda não sei, quero entender"]
-  },
-  {
-    type: "multi_choice",
-    field: "tentativas",
-    question: "Você já tentou resolver, mas não conseguiu, utilizando alguma das opções abaixo?",
-    options: [
-      "Dietas restritivas (low FODMAP, sem glúten, sem lactose...)",
-      "Probióticos ou suplementos por conta própria",
-      "Chás, remédios caseiros ou fórmulas manipuladas",
-      "Acompanhamento nutricional que não focou na causa",
-      "Não tentei nenhuma dessas opções"
-    ]
-  },
-  {
-    type: "choice",
-    field: "grupo_programa",
-    question: "Quer participar de um grupo exclusivo para conhecer <strong>o programa de acompanhamento completo da doutora Larissa Lodêtti, focado em intestino</strong>?",
-    options: ["SIM", "NÃO"]
-  }
-];
-
-function openQuiz(e){
-  if(e) e.preventDefault();
-  quizStep = 1;
-  quizAnswers = {};
-  quizLastFocusedEl = document.activeElement;
-  renderQuizStep();
-  document.getElementById('quizOverlay').classList.add('active');
-  var closeBtn = document.querySelector('.quiz-close');
-  if(closeBtn) closeBtn.focus();
-  if(typeof fbq!=='undefined'){
-    fbq('trackCustom','QuizStart');
-  }
-  return false;
-}
-
-function closeQuiz(){
-  document.getElementById('quizOverlay').classList.remove('active');
-  if(quizLastFocusedEl && typeof quizLastFocusedEl.focus === 'function'){
-    quizLastFocusedEl.focus();
-  }
-}
-
-function renderQuizStep(){
-  var body = document.getElementById('quizBody');
-  var label = document.getElementById('quizStepLabel');
-  var fill = document.getElementById('quizProgressFill');
-
-  var data = quizSteps[quizStep-1];
-  label.textContent = "Pergunta " + quizStep + " de " + QUIZ_TOTAL;
-  fill.style.width = ((quizStep-1)/QUIZ_TOTAL*100) + "%";
-
-  var html = '<div class="quiz-question">'+data.question+'</div>';
-
-  if(data.type === "choice"){
-    html += '<div class="quiz-options">';
-    data.options.forEach(function(opt, i){
-      html += '<button type="button" class="quiz-opt" onclick="selectQuizOption('+i+')">'+opt+'</button>';
-    });
-    html += '</div>';
-  } else if(data.type === "multi_choice"){
-    html += '<div class="quiz-options" id="quizMultiOptions">';
-    data.options.forEach(function(opt, i){
-      html += '<button type="button" class="quiz-opt quiz-opt-multi" data-index="'+i+'" aria-pressed="false" onclick="toggleQuizOption('+i+')">'+
-                '<span class="quiz-opt-check" aria-hidden="true"></span><span>'+opt+'</span>'+
-              '</button>';
-    });
-    html += '</div>';
-    html += '<button type="button" class="btn btn-full" style="margin-top:14px;" onclick="submitQuizMulti()">Continuar →</button>';
-  }
-
-  if(quizStep > 1){
-    html += '<button type="button" class="quiz-back" onclick="quizBack()">← Voltar</button>';
-  }
-
-  body.innerHTML = html;
-}
-
-function selectQuizOption(index){
-  var data = quizSteps[quizStep-1];
-  quizAnswers[data.field] = data.options[index];
-  advanceQuiz();
-}
-
-function toggleQuizOption(index){
-  var btn = document.querySelector('.quiz-opt-multi[data-index="'+index+'"]');
-  var selected = btn.classList.toggle('selected');
-  btn.setAttribute('aria-pressed', selected ? 'true' : 'false');
-}
-
-function submitQuizMulti(){
-  var data = quizSteps[quizStep-1];
-  var selected = [];
-  document.querySelectorAll('.quiz-opt-multi.selected').forEach(function(btn){
-    selected.push(data.options[parseInt(btn.getAttribute('data-index'), 10)]);
-  });
-  quizAnswers[data.field] = selected;
-  advanceQuiz();
-}
-
-function advanceQuiz(){
-  quizStep++;
-  if(quizStep > QUIZ_TOTAL){
-    renderQuizFinal();
-  } else {
-    renderQuizStep();
-  }
-  document.querySelector('.quiz-box').scrollTop = 0;
-}
-
-function quizBack(){
-  if(quizStep > 1){
-    quizStep--;
-    renderQuizStep();
-  }
-}
-
-function renderQuizFinal(){
-  var label = document.getElementById('quizStepLabel');
-  var fill = document.getElementById('quizProgressFill');
-  var body = document.getElementById('quizBody');
-
-  label.textContent = "Pronto!";
-  fill.style.width = "100%";
-
-  var isSim = quizAnswers.grupo_programa === "SIM";
-  var linkDestino = isSim ? GROUP_LINK_PROGRAMA : GROUP_LINK_AULA;
-  var tituloFinal = "Perfeito, sua vaga está quase garantida!";
-  var textoFinal = isSim
-    ? "Clique no botão abaixo para entrar no grupo exclusivo, participar da aula ao vivo e conhecer <strong>o programa de acompanhamento completo da Dra. Larissa</strong>."
-    : "Clique no botão abaixo para entrar no grupo e receber o link da aula ao vivo de quarta-feira com a Dra. Larissa.";
-  var textoBotao = isSim ? "Entrar no Grupo Exclusivo →" : "Entrar no Grupo da Aula →";
-
-  body.innerHTML =
-    '<div class="quiz-final">' +
-      '<div class="ic-ok" aria-hidden="true">✓</div>' +
-      '<h3>'+tituloFinal+'</h3>' +
-      '<p>'+textoFinal+'</p>' +
-      '<a href="'+linkDestino+'" target="_blank" rel="noopener noreferrer" class="btn btn-full btn-whatsapp"'+(isSim ? ' onclick="quizFinalClick()"' : '')+'>'+
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" fill="#fff" style="flex-shrink:0;" aria-hidden="true" focusable="false">'+
-          '<path d="M24 4C12.95 4 4 12.95 4 24c0 3.55.93 6.88 2.56 9.77L4 44l10.56-2.52A19.86 19.86 0 0 0 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm0 36c-3.14 0-6.1-.82-8.66-2.26l-.62-.37-6.27 1.5 1.53-6.1-.4-.64A15.93 15.93 0 0 1 8 24c0-8.82 7.18-16 16-16s16 7.18 16 16-7.18 16-16 16zm8.77-11.76c-.48-.24-2.84-1.4-3.28-1.56-.44-.16-.76-.24-1.08.24-.32.48-1.24 1.56-1.52 1.88-.28.32-.56.36-1.04.12-.48-.24-2.03-.75-3.87-2.39-1.43-1.28-2.4-2.85-2.68-3.33-.28-.48-.03-.74.21-.98.22-.22.48-.56.72-.84.24-.28.32-.48.48-.8.16-.32.08-.6-.04-.84-.12-.24-1.08-2.6-1.48-3.56-.38-.92-.78-.8-1.08-.82-.28-.01-.6-.01-.92-.01-.32 0-.84.12-1.28.6-.44.48-1.68 1.64-1.68 4s1.72 4.64 1.96 4.96c.24.32 3.38 5.16 8.2 7.24 1.15.5 2.04.8 2.74 1.02 1.15.36 2.2.31 3.02.19.92-.14 2.84-1.16 3.24-2.28.4-1.12.4-2.08.28-2.28-.12-.2-.44-.32-.92-.56z"/>'+
-        '</svg>'+
-        textoBotao+
-      '</a>' +
-    '</div>';
-
-  if(typeof fbq!=='undefined'){
-    fbq('trackCustom', isSim ? 'QuizGrupoPrograma' : 'QuizGrupoAula', quizAnswers);
-  }
-}
-
-function quizFinalClick(){
+function handleCtaClick(e) {
   var eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
 
-  if(typeof fbq!=='undefined'){
+  // 1. Dispara o evento de Conversão (Lead) no Meta Pixel
+  if(typeof fbq !== 'undefined'){
     fbq('track', 'Lead', {content_name: 'Entrar no Grupo - Webinario Dra Larissa'}, {eventID: eventId});
   }
 
+  // 2. Dispara o evento para o Webhook do n8n (Conversion API / CAPI)
   if(N8N_WEBHOOK_URL && N8N_WEBHOOK_URL.indexOf('http') === 0){
     fetch(N8N_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        situacao: quizAnswers.situacao,
-        tentativas: quizAnswers.tentativas,
-        grupo_programa: quizAnswers.grupo_programa,
+        origem: 'direto_sem_quiz',
+        grupo_programa: 'SIM',
         event_id: eventId,
         event_source_url: window.location.href,
         fbc: capturedFbc,
@@ -538,30 +283,6 @@ function quizFinalClick(){
     }).catch(function(){});
   }
 }
-
-document.addEventListener('keydown', function(e){
-  var overlay = document.getElementById('quizOverlay');
-  if(!overlay.classList.contains('active')) return;
-
-  if(e.key === 'Escape'){
-    closeQuiz();
-    return;
-  }
-
-  if(e.key === 'Tab'){
-    var focusable = overlay.querySelectorAll('button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])');
-    if(!focusable.length) return;
-    var first = focusable[0];
-    var last = focusable[focusable.length-1];
-    if(e.shiftKey && document.activeElement === first){
-      e.preventDefault();
-      last.focus();
-    } else if(!e.shiftKey && document.activeElement === last){
-      e.preventDefault();
-      first.focus();
-    }
-  }
-});
 </script>
 
 </body>
